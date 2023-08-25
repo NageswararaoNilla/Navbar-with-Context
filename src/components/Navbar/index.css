@@ -1,1 +1,82 @@
-/* Write your CSS here */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.light-bg {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+  box-shadow: 0px 0px 0px 1px #dcdcdc;
+}
+
+.dark-bg {
+  background-color: #333333;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  max-width: 1110px;
+}
+
+@media screen and (min-width: 768px) {
+  .header-container {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.website-logo {
+  height: 48px;
+  margin-left: 12px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav-menu-item {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.list-text-light-theme {
+  color: #171f46;
+}
+
+.list-text-dark-theme {
+  color: #ffffff;
+}
+
+.nav-link {
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.theme-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.theme-image {
+  height: 32px;
+}
