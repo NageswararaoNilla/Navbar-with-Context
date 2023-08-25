@@ -9,31 +9,33 @@ const Navbar = () => (
     {value => {
       const {isDarkTheme, toggleTheme} = value
 
-      const themeImageUrl = isDarkTheme
+      const onToggleTheme = () => {
+        toggleTheme()
+      }
+
+      const themeImageURL = isDarkTheme
         ? 'https://assets.ccbp.in/frontend/react-js/light-theme-img.png'
         : 'https://assets.ccbp.in/frontend/react-js/dark-theme-img.png'
 
-      const websiteLogoUrl = isDarkTheme
+      const navbarBgClassName = isDarkTheme
+        ? 'navbar-bg-dark'
+        : 'navbar-bg-light'
+
+      const websiteLogoImageURL = isDarkTheme
         ? 'https://assets.ccbp.in/frontend/react-js/website-logo-dark-theme-img.png'
         : 'https://assets.ccbp.in/frontend/react-js/website-logo-light-theme-img.png'
-
-      const bgColor = isDarkTheme ? 'dark-bg' : 'light-bg'
 
       const navItemClassName = isDarkTheme
         ? 'list-text-dark-theme'
         : 'list-text-light-theme'
 
-      const onToggleTheme = () => {
-        toggleTheme()
-      }
-
       return (
-        <nav className={`nav-container ${bgColor}`}>
-          <div className="header-container">
+        <div className={`navbar ${navbarBgClassName}`}>
+          <div className="navbar-content">
             <img
-              src={websiteLogoUrl}
-              alt="website logo"
               className="website-logo"
+              src={websiteLogoImageURL}
+              alt="website logo"
             />
             <ul className="nav-menu">
               <li className="nav-menu-item">
@@ -53,10 +55,10 @@ const Navbar = () => (
               type="button"
               onClick={onToggleTheme}
             >
-              <img className="theme-image" src={themeImageUrl} alt="theme" />
+              <img className="theme-image" src={themeImageURL} alt="theme" />
             </button>
           </div>
-        </nav>
+        </div>
       )
     }}
   </ThemeContext.Consumer>
